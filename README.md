@@ -24,9 +24,10 @@ Clone the Repo:
 
 > php artisan storage:link
 
-> php artisan migrate:fresh --seed
+ php artisan migrate:fresh --seed
 
-> php artisan serve
+ php artisan serve
+
 
 http://127.0.0.1:8000/
 
@@ -35,7 +36,6 @@ If you like our project please leave a star ❤
 
 
 
-` For Online Demo Click Me
 
 
 
