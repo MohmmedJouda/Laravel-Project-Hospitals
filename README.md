@@ -11,16 +11,38 @@
 
 Clone the Repo:
 > git clone https://github.com/MohmmedJouda/Laravel-Project-Hospitals.git
+
+
 > cd hospitalMS
+
+
 > composer install or composer update
+
+
 > cp .env.example .env
+
+
 > Set up .env file
+
+
 > php artisan key:generate
+
+
 > php artisan storage:link
+
+
 > php artisan migrate:fresh --seed
+
+
 > php artisan serve
+
+
 http://127.0.0.1:8000/
+
+
 If you like our project please leave a star ❤
+
+
 
 ` For Online Demo Click Me
 
