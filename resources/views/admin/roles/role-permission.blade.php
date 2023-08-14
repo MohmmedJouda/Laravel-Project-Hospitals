@@ -46,7 +46,7 @@
                                                 <input onclick="assign('{{ $role->id }}','{{ $permission->id }}')"
                                                     class="form-check-input" type="checkbox"
                                                     id="permission_{{ $permission->id}}"
-                                                    @if($permission-> ) checked @endif>
+                                                    @if($permission->assign) checked @endif>
 
                                                 <label for="permission_{{ $permission->id }}"
                                                     class="form-check-label">Assigned</label>

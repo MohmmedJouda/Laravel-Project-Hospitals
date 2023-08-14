@@ -18,8 +18,8 @@ class AdminFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => "mohammed",
-            'email' => "mohammed@gmail.com",
+            'name' => "ali",
+            'email' => "ali@gmail.com",
             'password' => Hash::make('123456')
 
             // لتنفيذه نكتب بالكوماند هاد الامر

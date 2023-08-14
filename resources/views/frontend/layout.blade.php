@@ -245,7 +245,7 @@
                     </ul>
                 </nav>
                 <div class="d-flex align-items-center gap-2">
-                    <a href="login.html" class="btn cs-btn v2">الدخول</a>
+                    <a href="{{route('admin.login')}}" class="btn cs-btn v2">الدخول</a>
                     <div class="lang d-flex align-items-center">
                         <!-- <a href="#"> -->
                         <div class="cs-dropdown">

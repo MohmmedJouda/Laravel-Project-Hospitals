@@ -82,3 +82,7 @@ Route::fallback(function () {
 
 
 Route::get('/', [FrontEndController::class, 'home'])->name('home');
+
+Route::get('/login', function () {
+    return view('admin.home');
+});

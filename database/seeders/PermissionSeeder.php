@@ -33,6 +33,16 @@ class PermissionSeeder extends Seeder
         Permission::create(['name' => 'index-offers', 'guard_name' => 'admin']);
         Permission::create(['name' => 'delete-offer', 'guard_name' => 'admin']);
 
+        Permission::create(['name' => 'create-partner', 'guard_name' => 'admin']);
+        Permission::create(['name' => 'update-partner', 'guard_name' => 'admin']);
+        Permission::create(['name' => 'index-partners', 'guard_name' => 'admin']);
+        Permission::create(['name' => 'delete-partner', 'guard_name' => 'admin']);
+
+        Permission::create(['name' => 'create-standard', 'guard_name' => 'admin']);
+        Permission::create(['name' => 'update-standard', 'guard_name' => 'admin']);
+        Permission::create(['name' => 'index-standards', 'guard_name' => 'admin']);
+        Permission::create(['name' => 'delete-standard', 'guard_name' => 'admin']);
+
         Permission::create(['name' => 'create-admin', 'guard_name' => 'admin']);
         Permission::create(['name' => 'update-admin', 'guard_name' => 'admin']);
         Permission::create(['name' => 'index-admins', 'guard_name' => 'admin']);

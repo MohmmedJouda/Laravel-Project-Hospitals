@@ -34,7 +34,6 @@ class MajorController extends Controller
     {
         $request->validate([
             'name' => 'required|string',
-            'is_active' => 'in:true,flase|string',
             'cover' => 'nullable|image|mimes:jpg,png'
         ]);
 
@@ -79,8 +78,7 @@ class MajorController extends Controller
     {
 
         $request->validate([
-            'name' => 'required|string',
-            'is_active' => 'required|in:true,false|string|',
+            'name' => 'required|string', 
             'cover' => 'nullable|image|mimes:jpg,png'
         ]);
         $item = Major::find($id);
