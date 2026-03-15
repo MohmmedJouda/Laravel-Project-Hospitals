@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone')->unique();
-            $table->string('cover')->unique();
-            $table->string('descrption')->nullable();
+            $table->string('cover');
+            $table->string('description')->nullable();
             $table->unsignedBigInteger('hospital_id')->nullable();
             $table->foreign('hospital_id')->on('hospitals')->references('id')->cascadeOnDelete();
             $table->timestamps();

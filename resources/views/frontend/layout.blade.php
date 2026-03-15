@@ -106,8 +106,7 @@
                     <label for="">EN</label>
                     <span class="show">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                            <g id="vuesax_bulk_global" data-name="vuesax/bulk/global"
-                                transform="translate(-174 -254)">
+                            <g id="vuesax_bulk_global" data-name="vuesax/bulk/global" transform="translate(-174 -254)">
                                 <g id="global">
                                     <path id="Vector"
                                         d="M4.59,4.57c-.03,0-.07.02-.1.02A10.006,10.006,0,0,1,0,.1C0,.07.02.03.02,0A31.893,31.893,0,0,0,3.75.84,33.548,33.548,0,0,0,4.59,4.57Z"
@@ -245,7 +244,7 @@
                     </ul>
                 </nav>
                 <div class="d-flex align-items-center gap-2">
-                    <a href="{{route('admin.login')}}" class="btn cs-btn v2">الدخول</a>
+                    <a href="" class="btn cs-btn v2">الدخول</a>
                     <div class="lang d-flex align-items-center">
                         <!-- <a href="#"> -->
                         <div class="cs-dropdown">
@@ -262,8 +261,7 @@
                                                     xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     viewBox="0 0 20 20">
                                                     <circle id="Ellipse_11643" data-name="Ellipse 11643"
-                                                        cx="10" cy="10" r="10"
-                                                        fill="#3d9635" />
+                                                        cx="10" cy="10" r="10" fill="#3d9635" />
                                                     <g id="Group_63308" data-name="Group 63308"
                                                         transform="translate(2.852 4.7)">
                                                         <path id="Path_41627" data-name="Path 41627"
@@ -373,8 +371,7 @@
                                                     xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     viewBox="0 0 20 20">
                                                     <circle id="Ellipse_11644" data-name="Ellipse 11644"
-                                                        cx="9.918" cy="9.918" r="9.918"
-                                                        fill="#f0f0f0" />
+                                                        cx="9.918" cy="9.918" r="9.918" fill="#f0f0f0" />
                                                     <g id="Group_63310" data-name="Group 63310"
                                                         transform="translate(0.347 2.192)">
                                                         <path id="Path_41658" data-name="Path 41658"
@@ -521,7 +518,7 @@
                 <div class="row justify-content-md-start justify-content-center">
                     <div class="col-lg-5 col-md-12 mb-3 mb-md-0">
                         <figure>
-                            <img src="{{asset('frontend/images/logo.svg')}}" alt="" srcset="">
+                            <img src="{{ asset('frontend/images/logo.svg') }}" alt="" srcset="">
                         </figure>
                         <p>
                             رايت جايد هي منصة دولية للبحث عن أفضل المستشفيات
@@ -691,8 +688,7 @@
                                         transform="translate(1135.999 1947.309)" fill="#ffe2e1"
                                         fill-rule="evenodd" />
                                     <circle id="Ellipse_11616" data-name="Ellipse 11616" cx="6"
-                                        cy="6" r="6" transform="translate(1148 1959.107)"
-                                        fill="#ffe2e1" />
+                                        cy="6" r="6" transform="translate(1148 1959.107)" fill="#ffe2e1" />
                                     <path id="Path_41470" data-name="Path 41470"
                                         d="M365.1,90.213a1.588,1.588,0,1,1-1.588-1.588A1.588,1.588,0,0,1,365.1,90.213Zm0,0"
                                         transform="translate(800.084 1865.492)" fill="url(#linear-gradient)" />
@@ -777,7 +773,7 @@
         integrity="sha512-jk2H6cbspEVLyLHIJkHcwiHqh7sQuyrBJvHKokFyKebzaRZiA7RmcbAo7KvM3GqFaLJJGDFC/gBMYzbeeS7KUw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ asset('frontend/js/main.js') }}"></script>
-    <script></script>
+    @yield('scripts')
     <!-- <script src="assets/js/scripts.js"></script> -->
     <!-- <script src="assets/js/scripts-en.js"></script> -->
 </body>

@@ -12,56 +12,24 @@
                             دولية للبحث عن أفضل المستشفيات والأخصائيين
                             ،المتميزين في تركيا لتقديم أفضل خدمات السياحة العلاجية والطبية لك
                             .نعمل بجد كل يوم لجعل الناس أكثر صحة وأكثر سعادة</p>
-                        <form action="#" method="post" class="mt-5 mb-3 wow fadeInUp" data-wow-duration="1s"
+                        <form action="#" method="get" class="mt-5 mb-3 wow fadeInUp" data-wow-duration="1s"
                             data-wow-delay="0.3s">
                             <div class="form-group">
                                 <div class="cs-search-input">
                                     <span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20.003" height="20"
                                             viewBox="0 0 20.003 20">
-                                            <g id="search-normal" transform="translate(-430 -190)">
-                                                <path id="Vector" d="M19,9.5A9.5,9.5,0,1,1,9.5,0,9.5,9.5,0,0,1,19,9.5Z"
-                                                    transform="translate(430 190)" fill="#e2e2e2"></path>
-                                                <path id="Vector-2" data-name="Vector"
-                                                    d="M2.552,3.252a.7.7,0,0,1-.49-.2L.2,1.192A.706.706,0,0,1,.2.2a.706.706,0,0,1,.99,0l1.86,1.86a.706.706,0,0,1,0,.99A.738.738,0,0,1,2.552,3.252Z"
-                                                    transform="translate(446.747 206.747)" fill="#05060f"></path>
-                                            </g>
                                         </svg>
                                     </span>
-                                    <input type="text" class="form-control custom-input"
-                                        placeholder="...ابحث عن مستشفى أو أخصائي أو تخصص">
+                                    <input type="text" id="main-search-input" class="form-control custom-input"
+                                        placeholder="...ابحث عن مستشفى أو أخصائي أو تخصص" autocomplete="off">
                                     <button type="button" class="btn cs-btn v2">بحث</button>
                                 </div>
                             </div>
                         </form>
-                        <div class="suggestions wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
-                            <h4>إقتراحات</h4>
-                            <div class="d-flex flex-wrap gap-1">
-                                <div class="suggestion wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
-                                    <a href="#">طب الأعصاب</a>
-                                </div>
-                                <div class="suggestion wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
-                                    <a href="#">مستشفى الأناضول</a>
-                                </div>
-                                <div class="suggestion wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
-                                    <a href="#">أمراض الكلى</a>
-                                </div>
-                                <div class="suggestion wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
-                                    <a href="#">جراحة الأعصاب</a>
-                                </div>
-                                <div class="suggestion wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-                                    <a href="#">استيتك انترناشونال</a>
-                                </div>
-                                <div class="suggestion wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
-                                    <a href="#">أمراض السكري</a>
-                                </div>
-                                <div class="suggestion wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.7s">
-                                    <a href="#">أوغور شاهين</a>
-                                </div>
-                                <div class="suggestion wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.8s">
-                                    <a href="#">أمراض الجهاز الهضمي</a>
-                                </div>
-                            </div>
+                        <div id="search-area" style="display: none;">
+                            <h4 id="search-title"></h4>
+                            <div id="results-container" class="d-flex flex-wrap gap-2"></div>
                         </div>
                     </div>
                     <div class="col-lg-6 offset-lg-1  order-0">
@@ -91,8 +59,8 @@
                             <div class="col-lg-auto col-md-4 col-6">
                                 <div class="major-card">
                                     <figure>
-                                        <img src="{{ Storage::url('majors/' . $major->cover) }}" class="wow zoomIn"
-                                            data-wow-duration="1s" data-wow-delay="0.1s" alt="" srcset="">
+                                        <img src="{{ Storage::url($major->cover) }}" class="wow zoomIn" data-wow-duration="1s"
+                                            data-wow-delay="0.1s" alt="" srcset="">
                                     </figure>
                                     <h4 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">{{ $major->name }}
                                     </h4>
@@ -121,8 +89,7 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="hospital-card wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
                                     <figure>
-                                        <img src="{{ Storage::url('hospitals/' . $hospital->cover) }}" alt=""
-                                            srcset="">
+                                        <img src="{{ Storage::url($hospital->cover) }}" alt="" srcset="">
                                     </figure>
                                     <div class="hospital-rate">
                                         <div class="d-flex align-items-center">
@@ -166,8 +133,7 @@
                                 <div class="general-card specialist-card wow fadeInUp" data-wow-duration="1s"
                                     data-wow-delay="0.1s">
                                     <figure>
-                                        <img src="{{ Storage::url('doctors/' . $doctor->cover) }}" alt=""
-                                            srcset="">
+                                        <img src="{{ Storage::url($doctor->cover) }}" alt="" srcset="">
                                     </figure>
                                     <div class="general-card-body">
                                         <h4>{{ $doctor->name }}</h4>
@@ -844,8 +810,7 @@
                                 <a href="#">
                                     <div class="offer-card wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
                                         <figure>
-                                            <img src="{{ Storage::url('offers/' . $offer->cover) }}" alt=""
-                                                srcset="">
+                                            <img src="{{ Storage::url($offer->cover) }}" alt="" srcset="">
                                             <div class="discount">
                                                 ‏{{ $offer->discount }}
                                             </div>
@@ -883,8 +848,7 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="standers-card wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
                                     <figure>
-                                        <img src="{{ Storage::url('standards/' . $standard->cover) }}" alt=""
-                                            srcset="">
+                                        <img src="{{ Storage::url($standard->cover) }}" alt="" srcset="">
                                     </figure>
                                     <h4>{{ $standard->title }}</h4>
                                     <p>{{ $standard->details }}</p>
@@ -1242,8 +1206,8 @@
                                                 <path id="Vector-2" data-name="Vector"
                                                     d="M8.75,1.5h-8A.755.755,0,0,1,0,.75.755.755,0,0,1,.75,0h8a.75.75,0,0,1,0,1.5Z"
                                                     transform="translate(7.17 11.25)" fill="#00ce68" />
-                                                <path id="Vector-3" data-name="Vector" d="M0,0H24V24H0Z"
-                                                    fill="none" opacity="0" />
+                                                <path id="Vector-3" data-name="Vector" d="M0,0H24V24H0Z" fill="none"
+                                                    opacity="0" />
                                             </g>
                                         </svg>
 
@@ -1252,8 +1216,7 @@
                             </h5>
                         </div>
 
-                        <div id="collapse-5" class="collapse" aria-labelledby="heading-5"
-                            data-bs-parent="#accordion">
+                        <div id="collapse-5" class="collapse" aria-labelledby="heading-5" data-bs-parent="#accordion">
                             <div class="card-body">
                                 تقوم فكرة المنصة الأساسية على ربط المرضى من جميع أنحاء العالم بأفضل المستشفيات
                                 والأطباء في تركيا والتي تختص وتتميز بتخصصات السياحة
@@ -1337,4 +1300,71 @@
         <p>طلب مساعدة</p>
     </div>
     <!-- ./contact-us-btn -->
+@endsection
+
+@section('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('main-search-input');
+            const resultsContainer = document.getElementById('results-container');
+            const searchTitle = document.getElementById('search-title');
+            const searchArea = document.getElementById('search-area'); // الحاوية الكبيرة التي تضم العنوان والنتائج
+
+            searchInput.addEventListener('input', function() {
+                let term = this.value.trim();
+
+                // 1. إذا تم مسح النص تماماً، اخفِ القسم بالكامل
+                if (term.length === 0) {
+                    searchTitle.innerText = "";
+                    resultsContainer.innerHTML = "";
+                    if (searchArea) searchArea.style.display = 'none'; // إخفاء القسم
+                    return;
+                }
+
+                // 2. إذا بدأ المستخدم بالكتابة، أظهر القسم وابدأ البحث
+                if (searchArea) searchArea.style.display = 'block';
+                searchTitle.innerText = "جاري البحث..."; // نص مؤقت لتحسين تجربة المستخدم
+
+                fetch(`/search?term=${encodeURIComponent(term)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        resultsContainer.innerHTML = '';
+                        searchTitle.innerText = "نتائج البحث";
+
+                        let html = '';
+
+                        // تجميع النتائج (أقسام، مستشفيات، أطباء)
+                        if (data.majors && data.majors.length > 0) {
+                            data.majors.forEach(m => {
+                                html +=
+                                    `<div class="suggestion"><a href="/majors/${m.id}">${m.name}</a></div>`;
+                            });
+                        }
+                        if (data.hospitals && data.hospitals.length > 0) {
+                            data.hospitals.forEach(h => {
+                                html +=
+                                    `<div class="suggestion"><a href="/hospitals/${h.id}">${h.name}</a></div>`;
+                            });
+                        }
+                        if (data.doctors && data.doctors.length > 0) {
+                            data.doctors.forEach(d => {
+                                html +=
+                                    `<div class="suggestion"><a href="/doctors/${d.id}">د. ${d.name}</a></div>`;
+                            });
+                        }
+
+                        // عرض النتائج أو رسالة "لا يوجد"
+                        if (html !== '') {
+                            resultsContainer.innerHTML = html;
+                        } else {
+                            resultsContainer.innerHTML =
+                                '<div class="text-muted w-100 p-2">لا توجد نتائج مطابقة للبحث.</div>';
+                        }
+                    })
+                    .catch(error => {
+                        console.error("خطأ:", error);
+                    });
+            });
+        });
+    </script>
 @endsection

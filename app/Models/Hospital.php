@@ -9,7 +9,7 @@ class Hospital extends Model
 {
     use HasFactory;
     // الحقول الي بنضيفها بهادي الاري هيا اللحقول الي بيتم ارسالها للداتا بيز لتخزينها fillable
-    // protected $fillable = ['name', 'is_active', 'location'];
+    protected $fillable = ['name', 'location', 'info', 'cover', 'is_active'];
 
     public function majors()
     {

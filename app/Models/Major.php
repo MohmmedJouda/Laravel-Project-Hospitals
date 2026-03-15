@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Major extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'cover',
+        'is_active',
+    ];
     public function hospitals()
     {
         return $this->belongsToMany(Hospital::class);

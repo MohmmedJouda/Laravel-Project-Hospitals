@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('standards', function (Blueprint $table) {
             $table->id();
             $table->string('chose_standard')->nullable();
-            $table->string('title');
-            $table->string('details');
+            $table->string('title')->required();
+            $table->string('details')->required();
             $table->string('cover')->nullable();
             $table->timestamps();
         });

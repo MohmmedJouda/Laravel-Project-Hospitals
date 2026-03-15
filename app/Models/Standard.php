@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Standard extends Model
 {
     use HasFactory;
+    protected $fillable = ['chose_standard', 'title', 'details', 'cover'];
 }
